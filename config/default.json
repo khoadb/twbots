@@ -2,5 +2,5 @@
     "appSecret": "ed0330dc8f4d7bd18f5d1661706e017b",
     "pageAccessToken": "EAAT9MfqaOXMBAFTEnb4hVjZBWRxjZAHahJQgrSC7MWRRNsZA12ZCtTAJ8PqK5ESsSPOKj0kdDC5vjGWkTS7DXaCUERzQcyx8ysHEOkVh0ZAGaGt9bp6yA6KCOsyKihXC3UiHtZAnRWppsLV2QkiyQv798ednfg0pyIOxFNaDpyAQZDZD",
     "validationToken": "123456",
-    "serverURL": "localhost"
+    "serverURL": "http://fbbots-test.azurewebsites.net/"
 }
