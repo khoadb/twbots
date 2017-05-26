@@ -307,6 +307,11 @@ function receivedMessage(event) {
         sendAccountLinking(senderID);
         break;
 
+     //khd 26.05.2017   
+     case 'ticket':
+        sendTicketInfoMessage(senderID);
+        break;
+
       default:
         sendTextMessage(senderID, messageText);
     }
@@ -718,6 +723,68 @@ function sendQuickReply(recipientId) {
 
   callSendAPI(messageData);
 }
+
+
+/*
+ * KHD 26.05.2017
+ * Send a message with Quick Reply buttons for TW Ticket info.
+ *
+ */
+function sendTicketInfoMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "What Ticket do you want to buy?",
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Kids A",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_TICKET_KIDS_A"
+        },
+        {
+          "content_type":"text",
+          "title":"Kids B",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_TICKET_KIDS_B"
+        },
+        {
+          "content_type":"text",
+          "title":"Kids C",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_TICKET_KIDS_C"
+        },
+        {
+          "content_type":"text",
+          "title":"Adults A",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_TICKET_ADULTS_C"
+        },
+        {
+          "content_type":"text",
+          "title":"Adults B",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_TICKET_ADULTS_C"
+        },
+        {
+          "content_type":"text",
+          "title":"Adults C",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_TICKET_ADULTS_C"
+        },
+        {
+          "content_type":"text",
+          "title":"Parents",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_TICKET_PARENTS"
+        },
+        {
+          "content_type":"text",
+          "title":"Others",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_TICKET_OTHERS"
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
 
 /*
  * Send a read receipt to indicate the message has been read
