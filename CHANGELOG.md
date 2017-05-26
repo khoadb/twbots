@@ -7,3 +7,7 @@
 ## May 11, 2016
 
 * Initial launch of the sample app including all features launched at F8
+
+## May 26, 2017
+
+* Customized by khd
