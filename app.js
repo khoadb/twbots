@@ -783,6 +783,10 @@ function sendTicketInfoMessage(recipientId) {
   };
 
   callSendAPI(messageData);
+
+  //KHD: continue the flow
+  sendNumberOfTicket(recipientId);
+
 }
 
 
@@ -893,6 +897,48 @@ function callSendAPI(messageData) {
     }
   });  
 }
+
+
+ /*
+ * Send a message to ask for number of tickets the customer wants to buy
+ * KHD 29.05.2016
+ */
+function sendNumberOfTicket(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "Great, many Ticket do you want to buy?",
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":" 1 (One)",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_TICKET_AMOUNT_1"
+        },
+        {
+          "content_type":"text",
+          "title":"2 (Two)",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_TICKET_AMOUNT_2"
+        },
+        {
+          "content_type":"text",
+          "title":"3 (Three)",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_TICKET_AMOUNT_3"
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+
+  //KHD: continue the flow
+  //sendNumberOfTicket(recipientId);
+
+}
+
+
+
 
 // Start server
 // Webhooks must be available via SSL with a certificate signed by a valid 
